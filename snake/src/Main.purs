@@ -1,10 +1,9 @@
 module Main where
 
 import Prelude
-import Control.Monad.Eff (Eff, foreachE)
-import Data.Maybe (Maybe(..))
+import Control.Monad.Eff (Eff)
 import Data.Tuple (Tuple(..))
-import FRP.Event (Event, sampleOn_)
+import FRP.Event (sampleOn_)
 import FRP.Event.Time as Time
 import FRP.Event.Keyboard as Keyboard
 import FRP.Behavior (Behavior, unfold, animate)
