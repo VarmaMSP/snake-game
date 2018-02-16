@@ -2001,6 +2001,12 @@ var PS = {};
                       $tco_done = true;
                       return new Data_Tuple.Tuple(40, Data_Semiring.add(Data_Tuple.semiringTuple(Data_Semiring.semiringInt)(Data_Semiring.semiringInt))(h)(down));
                   };
+                  if (turn === 32) {
+                      $tco_var_s = s;
+                      $tco_var_dir = dir;
+                      $copy_turn = dir;
+                      return;
+                  };
                   $tco_var_s = s;
                   $tco_var_dir = dir;
                   $copy_turn = dir;
@@ -2104,9 +2110,9 @@ var PS = {};
   var Snake_Update = PS["Snake.Update"];
   var snake = (function () {
       var init = {
-          snake: [ new Data_Tuple.Tuple(5, 0), new Data_Tuple.Tuple(6, 0), new Data_Tuple.Tuple(7, 0) ],
+          snake: [ new Data_Tuple.Tuple(5, 10), new Data_Tuple.Tuple(5, 11), new Data_Tuple.Tuple(5, 12) ],
           food: new Data_Tuple.Tuple(3, 2),
-          direction: 39,
+          direction: 38,
           alive: true,
           t: 0,
           score: 0

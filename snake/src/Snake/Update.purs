@@ -54,6 +54,7 @@ nextHeadPos s dir turn =
     _, 38  -> Tuple 38 (h + up)
     _, 39  -> Tuple 39 (h + right)
     _, 40  -> Tuple 40 (h + down)
+    _, 32  -> nextHeadPos s dir dir
     x, _   -> nextHeadPos s dir dir
 
 nextFoodPos :: Unit -> Point

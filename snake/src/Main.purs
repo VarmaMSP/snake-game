@@ -16,9 +16,9 @@ snake :: Behavior Model
 snake = unfold update event init
   where
     event = sampleOn_ Keyboard.down $ Time.interval 150
-    init = { snake : [ Tuple 5 0, Tuple 6 0, Tuple 7 0 ]
+    init = { snake : [ Tuple 5 10, Tuple 5 11, Tuple 5 12 ]
            , food : Tuple 3 2
-           , direction : 39
+           , direction : 38
            , alive : true
            , t : 0
            , score : 0
