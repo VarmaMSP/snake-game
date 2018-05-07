@@ -5,11 +5,12 @@ import Control.Monad.Eff (Eff, foreachE)
 import Data.Int (toNumber)
 import Data.Maybe (Maybe(..))
 import Data.Tuple (Tuple(..), fst, snd)
-import Graphics.Canvas (CANVAS, getCanvasElementById, getContext2D, clearRect, setFillStyle, fillRect)
+import DOM (DOM)
+import Graphics.Canvas (getCanvasElementById, getContext2D, clearRect, setFillStyle, fillRect)
 import Partial.Unsafe (unsafePartial)
-import Snake.Types (Model(..), blockSize, boardSize, ref)
+import Snake.Types (Model, blockSize, boardSize, ref)
 
-foreign import setScore :: Int -> Unit
+foreign import setScore :: forall eff. Int -> Eff (dom :: DOM | eff) Unit
 
 render :: Model -> Eff _ Unit
 render { snake, food, t, score } = void $ unsafePartial $ do
@@ -18,13 +19,16 @@ render { snake, food, t, score } = void $ unsafePartial $ do
   let white = "#FFFFFF"
       black = "#000000"
 
-  _ <- pure $ setScore score
+  -- set score
+  setScore score
+  -- clear canvas
   _ <- clearRect context
     { x : 0.0
     , y : 0.0
     , w : blockSize * boardSize + 2.0 * ref
     , h : blockSize * boardSize + 2.0 * ref
     }
+  -- paint board's boundary
   _ <- setFillStyle black context
   _ <- fillRect context
     { x : 0.0
@@ -39,7 +43,7 @@ render { snake, food, t, score } = void $ unsafePartial $ do
     , w : blockSize * boardSize
     , h : blockSize * boardSize
     }
-
+  -- paint food
   _ <- setFillStyle black context
   _ <- fillRect context
     { x : blockSize * (toNumber $ fst food) + ref + 1.0 + (toNumber t)
@@ -47,7 +51,7 @@ render { snake, food, t, score } = void $ unsafePartial $ do
     , w : blockSize - 2.0 - (2.0 * (toNumber t))
     , h : blockSize - 2.0 - (2.0 * (toNumber t))
     }
-
+  -- paint snake
   foreachE snake (\(Tuple p q) -> void $ do
     _ <- setFillStyle black context
     fillRect context
