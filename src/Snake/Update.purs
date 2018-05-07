@@ -22,8 +22,8 @@ inBound s = case uncons s of
     let x = fst h
         y = snd h
     in (x >= 0) && (y >= 0)
-       && (x < (floor $ boardSize - 1.0))
-       && (y < (floor $ boardSize - 1.0))
+       && (x < (floor $ boardSize))
+       && (y < (floor $ boardSize))
        && (not (h `elem` t))
   Nothing -> false
 
