@@ -4,7 +4,7 @@
 ![alt text](https://raw.githubusercontent.com/VarmaMSP/snake-game/master/screenshot.png "Screenshot")
 
 ## Demo
- Demo can be found at this [link.](https://varmamsp.github.io/purescript-behaviors-examples/)
+ Demo can be found at this [link.](https://varmamsp.github.io/snake-game/)
 
 ## Setup
 ```sh
