@@ -1,7 +1,7 @@
 # Snake Game
  Classic snake game built with [purescript-behaviors library](https://github.com/paf31/purescript-behaviors).
 
-![alt text](https://raw.githubusercontent.com/VarmaMSP/snake-game/master/screenshot.png "Screenshot")
+![alt text](https://raw.githubusercontent.com/VarmaMSP/snake-game/master/gameplay.gif "Screenshot")
 
 ## Demo
  Demo can be found at this [link.](https://varmamsp.github.io/snake-game/)
