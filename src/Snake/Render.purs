@@ -14,7 +14,7 @@ foreign import setScore :: forall eff. Int -> Eff (dom :: DOM | eff) Unit
 
 render :: Model -> Eff _ Unit
 render { snake, food, t, score } = void $ unsafePartial $ do
-  (Just canvas) <- getCanvasElementById "snake"
+  (Just canvas) <- getCanvasElementById "snake-board"
   context <- getContext2D canvas
   let white = "#FFFFFF"
       black = "#000000"

@@ -2,36 +2,40 @@
   <head>
     <title>Snake Game</title>
     <style>
-      #header-container {
-        margin-top: 1rem;
-        text-align: center;
+      header {
+        margin-top: 4rem;
         font-size: 3rem;
-      }
-      #main-container {
-        padding-top: 4rem;
+        font-weight: bold;
         text-align: center;
       }
-      #score-container {
+      #game {
+        padding-top: 2.5rem;
         text-align: center;
-        font-family: 'VT323', monospace;
-        font-size: 1.5rem;
       }
-      canvas {
+      #snake-board {
         display: inline;
+      }
+      #score {
+        margin-top: 1rem;
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: 'VT323', monospace;
+      }
+      #instructions {
+        margin-top: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        opacity: 0.6;
       }
     </style>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   </head>
   <body>
-    <div id="header-container"><b>Snake Game</b></div>
-    <div id="main-container">
-      <canvas id="snake" width="410" height="410"></canvas>
-      <br />
-      <div id="score-container">
-        <h1 id="score"></h1>
-      </div>
-      <br />
-      <p> Press Space to start and use Arrow keys to move. </p>
+    <header>Snake Game</header>
+    <div id="game">
+      <canvas id="snake-board" width="410" height="410"></canvas>
+      <div id="score"></div>
+      <div id="instructions">Press Space to start and use Arrow keys to turn.</p>
     </div>
     <script src="snake.js"></script>
   </body>
